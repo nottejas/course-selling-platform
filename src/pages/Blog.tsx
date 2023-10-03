@@ -1,6 +1,7 @@
 // Blog.tsx
 import Link from 'next/link';
 import React from 'react';
+import Image from 'next/image';
 
 const Blog = () => {
   const blogPosts = [
@@ -12,7 +13,7 @@ const Blog = () => {
       datetime: '2020-03-16',
       category: { name: 'Article', href: '#' },
       imageUrl:
-        'https://www.ntuclearninghub.com/documents/51786/4216795/Python-Symbol.png/369e410e-a90f-f887-c2dc-61f7ef761476?t=1679043970578',
+        'https://spectrum.ieee.org/media-library/image.jpg?id=33364099',
       preview:
         'Discover the power of Python: A versatile programming language known for its simplicity and effectiveness in various domains, from web development to machine learning.',
       author: {
@@ -22,6 +23,8 @@ const Blog = () => {
         href: '#',
       },
       readingLength: '6 min',
+      imageWidth: 400,
+      imageHeight: 400,
     },
     {
       id: 2,
@@ -41,6 +44,8 @@ const Blog = () => {
         href: '#',
       },
       readingLength: '8 min',
+      imageWidth: 400,
+      imageHeight: 400,
     },
     {
       id: 3,
@@ -60,6 +65,8 @@ const Blog = () => {
         href: '#',
       },
       readingLength: '7 min',
+      imageWidth: 400,
+      imageHeight: 400,
     },
     // Add more blog post data here...
   ];
@@ -92,10 +99,12 @@ const Blog = () => {
               >
                 <div className="flex-shrink-0">
                   <a href={post.href}>
-                    <img
+                    <Image
                       className="object-cover w-full h-48"
                       src={post.imageUrl}
                       alt=""
+                      width={post.imageWidth}
+                      height={post.imageHeight}
                     />
                   </a>
                 </div>
@@ -110,10 +119,12 @@ const Blog = () => {
                     {post.preview}
                   </div>
                   <div className="flex items-center mt-4">
-                    <img
+                    <Image
                       className="w-8 h-8 rounded-full"
                       src={post.author.imageUrl}
                       alt={`Author: ${post.author.name}`}
+                      width={32}
+                      height={32}
                     />
                     <p className="ml-2 text-sm text-gray-700">{post.author.name}</p>
                   </div>

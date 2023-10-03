@@ -1,6 +1,7 @@
 // Hero.tsx
 import Link from 'next/link';
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
+import Image from 'next/image';
 
 const Hero = () => {
   return (
@@ -64,10 +65,12 @@ const Hero = () => {
             <div className="mt-12 -mb-16 sm:-mb-48 lg:relative lg:m-0">
               <div className="max-w-md px-6 mx-auto sm:max-w-2xl lg:max-w-none lg:px-0">
                 {/* Illustration taken from Lucid Illustrations: https://lucid.pixsellz.io/ */}
-                <img
+                <Image
                   className="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
                   src="https://tailwindui.com/img/component-images/cloud-illustration-teal-cyan.svg"
                   alt=""
+                  width={400}
+                  height={400}
                 />
               </div>
             </div>

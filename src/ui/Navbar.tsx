@@ -1,11 +1,9 @@
-// Navbar.tsx
 import { Fragment } from 'react';
 import Link from 'next/link';
 import { Popover, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import Testimonial from './Testimonial';
-import Blog from '../pages/Blog';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 const navigation = [
   { name: 'Courses', href: '/courses' },
@@ -16,11 +14,6 @@ const navigation = [
 
 const Navbar = () => {
   const router = useRouter();
-
-  const scrollToBlog = () => {
-    router.push('/#blog', { scroll: true });
-  };
-
 
   const scrollToTestimonial = () => {
     const testimonialSection = document.getElementById('testimonial-section');
@@ -51,10 +44,12 @@ const Navbar = () => {
                 </div>
                 <Link href="#">
                   <span className="sr-only">CourseVista</span>
-                  <img
+                  <Image
                     className="w-auto h-8 sm:h-10"
                     src="https://tailwindui.com/img/logos/mark.svg?from-color=teal&from-shade=200&to-color=green&to-shade=400&toShade=400"
                     alt=""
+                    height={300}
+                    width={400}
                   />
                 </Link>
               </div>
@@ -70,15 +65,6 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  onClick={
-                    item.name === 'Blog'
-                      ? scrollToBlog
-                      : item.name === 'About Us'
-                      ? scrollToTestimonial
-                      : item.name === 'Contact Us'
-                      ? scrollToContact
-                      : null
-                  }
                   className="text-base font-medium text-gray-300 hover:text-white animate-fade-in"
                 >
                   {item.name}
@@ -119,10 +105,12 @@ const Navbar = () => {
           <div className="overflow-hidden bg-white rounded-lg shadow-md ring-1 ring-black ring-opacity-5">
             <div className="flex items-center justify-between px-5 pt-4">
               <div>
-                <img
+                <Image
                   className="w-auto h-8"
                   src="https://tailwindui.com/img/logos/mark.svg?from-color=teal&from-shade=500&to-color=green&to-shade=600&toShade=600"
                   alt=""
+                  height={300}
+                  width={400}
                 />
               </div>
               <div className="-mr-2">
@@ -138,7 +126,6 @@ const Navbar = () => {
                   <Link
                     key={item.name}
                     href={item.href}
-                    onClick={item.name === 'Blog' ? scrollToBlog : null} // Add this onClick handler
                     className="block px-3 py-2 text-base font-medium text-gray-900 rounded-md hover:bg-gray-100"
                   >
                     {item.name}
@@ -167,9 +154,7 @@ const Navbar = () => {
       </Transition>
 
       {/* This empty div serves as a scroll target */}
-      <div id="blog">
-        {/* Blog component goes here */}
-      </div>
+      <div id="blog">{/* Blog component goes here */}</div>
     </Popover>
   );
 };

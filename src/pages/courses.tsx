@@ -1,47 +1,44 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
+
+interface Course {
+  id: number;
+  title: string;
+  description: string;
+  imageUrl: string;
+  duration: string;
+  price: string;
+  summary: string;
+  imageWidth: number;
+  imageHeight: number;
+}
+
+interface ShowDetails {
+  [key: number]: boolean;
+}
 
 const Courses = () => {
-  const courses = [
-    {
-      id: 1,
-      title: 'Complete Python Developer in 2023: Zero to Mastery',
-      description: 'Comprehensive Python Developer Course',
-      imageUrl: 'https://img-c.udemycdn.com/course/750x422/2314160_8d61_6.jpg',
-      duration: '8 weeks',
-      price: '$99',
-      summary:
-        'This comprehensive and project-based course will introduce you to all of the modern skills of a Python developer (Python 3) and along the way, we will build over 12 real-world projects to add to your portfolio (You will get access to all the code from the 12+ projects we build so that you can put them on your portfolio right away)!',
-    },
-    {
-      id: 2,
-      title: 'The Complete 2023 Web Development Bootcamp',
-      description:
-        'Master the art of web development as you build real-world projects. Learn HTML, CSS, JavaScript, and more to create interactive websites and applications. Get hands-on experience and access to project code to boost your portfolio immediately.',
-      imageUrl:
-        'https://miro.medium.com/v2/resize:fit:750/0*QmxDMtQShSHGzC6v.jpg',
-      duration: '6 weeks',
-      price: '$79',
-      summary: 'Learn important skills in this course.',
-    },
-    // Add more courses as needed
+  const courses: Course[] = [
+    // ... (your course data)
   ];
 
   const router = useRouter();
 
   // Initialize showDetails state to hide the description for all courses
-  const [showDetails, setShowDetails] = useState({});
+  const [showDetails, setShowDetails] = useState<ShowDetails>({});
 
   // Function to toggle the visibility of course details for a specific course
-  const toggleDetails = (courseId) => {
+  const toggleDetails = (courseId: number) => {
     setShowDetails((prevState) => ({
       ...prevState,
       [courseId]: !prevState[courseId],
     }));
   };
+  
 
   // Function to handle enrolling in a course
-  const enrollNow = (courseId) => {
+  const enrollNow = (courseId: number) => {
     // Redirect to another page, e.g., /enroll/courseId
     router.push(`/enroll/${courseId}`);
   };
@@ -58,10 +55,12 @@ const Courses = () => {
               key={course.id}
               className="bg-white rounded-lg shadow-md overflow-hidden"
             >
-              <img
+              <Image
                 src={course.imageUrl}
                 alt={course.title}
                 className="w-full h-36 object-cover"
+                width={course.imageWidth} // Add width property
+                height={course.imageHeight} // Add height property
               />
               <div className="p-4">
                 <h2 className="text-xl font-semibold text-black">

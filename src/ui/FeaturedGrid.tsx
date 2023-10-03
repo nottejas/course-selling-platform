@@ -5,6 +5,7 @@ import {
   LockClosedIcon,
   ShieldCheckIcon,
 } from '@heroicons/react/24/outline';
+import React from 'react';
 
 const features = [
   {
@@ -42,7 +43,7 @@ const FeaturedGrid = () => {
           Everything you need to deploy your app
         </p>
         <p className='mx-auto mt-5 text-xl text-gray-500 max-w-prose'>
-        Unlock the tools, skills, and resources you need to bring your app vision to life. From ideation to deployment, we've got you covered on your web app development journey.
+          Unlock the tools, skills, and resources you need to bring your app vision to life. From ideation to deployment, we&apos;ve got you covered on your web app development journey.
         </p>
         <div className='mt-12'>
           <div className='grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3'>
@@ -52,10 +53,10 @@ const FeaturedGrid = () => {
                   <div className='-mt-6'>
                     <div>
                       <span className='inline-flex items-center justify-center p-3 rounded-md shadow-lg bg-gradient-to-r from-teal-400 to-green-600'>
-                        <feature.icon
-                          className='w-6 h-6 text-white'
-                          aria-hidden='true'
-                        />
+                        {React.createElement(feature.icon, {
+                          className: 'w-6 h-6 text-white',
+                          'aria-hidden': 'true',
+                        })}
                       </span>
                     </div>
                     <h3 className='mt-8 text-lg font-medium tracking-tight text-gray-900'>

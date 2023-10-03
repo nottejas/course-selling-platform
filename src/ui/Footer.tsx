@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaFacebook, FaInstagram, FaTwitter, FaGithub } from 'react-icons/fa';
+import Image from 'next/image';
 
 // Define the footerNavigation object
 const footerNavigation = {
@@ -61,10 +62,12 @@ const Footer = () => {
         <div className="max-w-md px-6 pt-12 mx-auto sm:max-w-7xl lg:px-8 lg:pt-16">
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
             <div className="space-y-8 xl:col-span-1">
-              <img
+              <Image
                 className="h-10"
                 src="https://tailwindui.com/img/logos/mark.svg?from-color=teal&from-shade=200&to-color=green&to-shade=400&toShade=400"
                 alt="CourseVista"
+                width={49}
+                height={50}
               />
               <p className="text-base text-gray-500">
                 Making the world a better place through constructing elegant

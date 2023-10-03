@@ -1,4 +1,6 @@
 // FeaturedScreenshot.tsx
+import Image from "next/image";
+
 const FeaturedScreenshot = () => {
   return (
     <div className='relative pt-16 bg-gray-50 sm:pt-24 lg:pt-32'>
@@ -9,15 +11,17 @@ const FeaturedScreenshot = () => {
             Start learning today.
           </p>
           <p className='mx-auto mt-5 text-xl text-gray-500 max-w-prose'>
-          Empower yourself with our expert-led courses. Start learning today for a brighter, more knowledgeable tomorrow.
+            Empower yourself with our expert-led courses. Start learning today for a brighter, more knowledgeable tomorrow.
           </p>
         </div>
-        {/* TODO: This should eventually be updated to a screen shot of a future course video */}
+        {/* TODO: This should eventually be updated to a screenshot of a future course video */}
         <div className='mt-12 -mb-10 sm:-mb-24 lg:-mb-80'>
-          <img
+          <Image
             className='rounded-lg shadow-xl ring-1 ring-black ring-opacity-5'
             src='https://tailwindui.com/img/component-images/green-project-app-screenshot.jpg'
             alt=''
+            width={2400} // Specify the width here
+            height={2400} // Specify the height here
           />
         </div>
       </div>

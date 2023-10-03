@@ -1,4 +1,12 @@
-// pages/login.tsx
+// Define a custom error type
+interface ApiError {
+  response: {
+    data: {
+      message: string;
+    };
+  };
+}
+
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
@@ -17,9 +25,13 @@ const Login = () => {
 
       // Redirect to the courses page upon successful login
       router.push('/courses'); // Change to the correct route
-    } catch (error) {
-      console.error(error.response.data.message);
-      // Handle error (e.g., display error message)
+    } catch (error: ApiError | any) { // Specify the error type here
+      if (error.response && error.response.data) {
+        console.error(error.response.data.message);
+        // Handle error (e.g., display error message)
+      } else {
+        console.error('An unknown error occurred.');
+      }
     }
   };
 
