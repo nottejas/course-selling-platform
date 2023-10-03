@@ -1,4 +1,4 @@
-# A course-selling platform
+https://coursevista.netlify.app/
 
 # to-run 
 ~npm run dev 
