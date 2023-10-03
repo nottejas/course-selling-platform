@@ -20,26 +20,48 @@ interface ShowDetails {
 
 const Courses = () => {
   const courses: Course[] = [
-    // ... (your course data)
+    {
+      id: 1,
+      title: 'Complete Python Developer in 2023: Zero to Mastery',
+      description: 'Comprehensive Python Developer Course',
+      imageUrl: 'https://img-c.udemycdn.com/course/750x422/2314160_8d61_6.jpg',
+      duration: '8 weeks',
+      price: '$99',
+      summary:
+        'This comprehensive and project-based course will introduce you to all of the modern skills of a Python developer (Python 3) and along the way, we will build over 12 real-world projects to add to your portfolio (You will get access to all the code from the 12+ projects we build so that you can put them on your portfolio right away)!',
+      imageWidth: 750, // Add the width here
+      imageHeight: 422, // Add the height here
+    },
+    {
+      id: 2,
+      title: 'The Complete 2023 Web Development Bootcamp',
+      description:
+        'Master the art of web development as you build real-world projects. Learn HTML, CSS, JavaScript, and more to create interactive websites and applications. Get hands-on experience and access to project code to boost your portfolio immediately.',
+      imageUrl:
+        'https://img-c.udemycdn.com/course/750x422/1565838_e54e_16.jpg',
+      duration: '6 weeks',
+      price: '$79',
+      summary: 'Learn important skills in this course.',
+      imageWidth: 750, // Add the width here
+      imageHeight: 422, // Add the height here
+    },
+    // Add more courses as needed
   ];
 
   const router = useRouter();
 
-  // Initialize showDetails state to hide the description for all courses
   const [showDetails, setShowDetails] = useState<ShowDetails>({});
 
-  // Function to toggle the visibility of course details for a specific course
+  // Provide type annotations for courseId parameter
   const toggleDetails = (courseId: number) => {
     setShowDetails((prevState) => ({
       ...prevState,
       [courseId]: !prevState[courseId],
     }));
   };
-  
 
-  // Function to handle enrolling in a course
+  // Provide type annotations for courseId parameter
   const enrollNow = (courseId: number) => {
-    // Redirect to another page, e.g., /enroll/courseId
     router.push(`/enroll/${courseId}`);
   };
 
