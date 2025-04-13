@@ -45,7 +45,50 @@ const Courses = () => {
       imageWidth: 750, // Add the width here
       imageHeight: 422, // Add the height here
     },
-    // Add more courses as needed
+    {
+      id: 3,
+      title: 'Machine Learning A-Z: Hands-On Python & R In Data Science',
+      description: 'Learn to create Machine Learning Algorithms in Python and R from scratch',
+      imageUrl: 'https://img-c.udemycdn.com/course/750x422/950390_270f_3.jpg',
+      duration: '10 weeks',
+      price: '$119',
+      summary: 'Learn how to create Machine Learning Algorithms in Python and R from two Data Science experts. Code templates included for you to download and use in your own projects.',
+      imageWidth: 750,
+      imageHeight: 422,
+    },
+    {
+      id: 4,
+      title: 'React - The Complete Guide 2023',
+      description: 'Dive in and learn React.js from scratch! Learn Reactjs, Hooks, Redux, React Routing, Animations, Next.js and more!',
+      imageUrl: 'https://img-c.udemycdn.com/course/750x422/1362070_b9a1_2.jpg',
+      duration: '7 weeks',
+      price: '$89',
+      summary: 'This course will teach you React.js in a practice-oriented way, using all the latest patterns and best practices. You will learn all the key fundamentals as well as advanced concepts and related topics to turn you into a React.js developer.',
+      imageWidth: 750,
+      imageHeight: 422,
+    },
+    {
+      id: 5,
+      title: 'The Data Science Course 2023: Complete Data Science Bootcamp',
+      description: 'Complete Data Science Training: Mathematics, Statistics, Python, Advanced Statistics, Machine & Deep Learning',
+      imageUrl: 'https://img-c.udemycdn.com/course/750x422/1754098_e0df_3.jpg',
+      duration: '12 weeks',
+      price: '$129',
+      summary: 'The Data Science Course is the most comprehensive, yet straight-forward, course for the data science and machine learning field. Learn statistical analysis, Python, and the most in-demand skills needed for data scientist roles.',
+      imageWidth: 750,
+      imageHeight: 422,
+    },
+    {
+      id: 6,
+      title: 'JavaScript: The Advanced Concepts',
+      description: 'Learn modern advanced JavaScript practices and be in the top 10% of JavaScript developers',
+      imageUrl: 'https://img-c.udemycdn.com/course/750x422/1501104_967d_13.jpg',
+      duration: '5 weeks',
+      price: '$69',
+      summary: 'Advanced JavaScript concepts such as prototype inheritance, scope, closures, execution context, higher-order functions, and more. Gain a deep understanding of how JavaScript works behind the scenes.',
+      imageWidth: 750,
+      imageHeight: 422,
+    }
   ];
 
   const router = useRouter();

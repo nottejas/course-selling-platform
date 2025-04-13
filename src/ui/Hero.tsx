@@ -1,12 +1,11 @@
 // Hero.tsx
 import Link from 'next/link';
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
-import Image from 'next/image';
 
 const Hero = () => {
   return (
     <section>
-      <div className="pt-10 bg-gray-900 sm:pt-16 lg:overflow-hidden lg:pt-8 lg:pb-14">
+      <div className="pt-10 bg-gradient-to-r from-gray-900 to-gray-800 sm:pt-16 lg:overflow-hidden lg:pt-8 lg:pb-14">
         <div className="mx-auto max-w-7xl lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:gap-8">
             <div className="max-w-md px-6 mx-auto sm:max-w-2xl sm:text-center lg:flex lg:items-center lg:px-0 lg:text-left">
@@ -64,14 +63,19 @@ const Hero = () => {
             </div>
             <div className="mt-12 -mb-16 sm:-mb-48 lg:relative lg:m-0">
               <div className="max-w-md px-6 mx-auto sm:max-w-2xl lg:max-w-none lg:px-0">
-                {/* Illustration taken from Lucid Illustrations: https://lucid.pixsellz.io/ */}
-                <Image
-                  className="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                  src="https://tailwindui.com/img/component-images/cloud-illustration-teal-cyan.svg"
-                  alt=""
-                  width={400}
-                  height={400}
-                />
+                {/* Abstract illustration using divs and CSS */}
+                <div className="w-full h-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none">
+                  <div className="relative w-full h-64 mx-auto overflow-hidden rounded-lg lg:h-auto lg:w-auto">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-64 h-64 bg-gradient-to-br from-teal-400 to-green-300 rounded-full blur-xl opacity-70 animate-pulse"></div>
+                      <div className="absolute w-48 h-48 bg-gradient-to-tr from-blue-500 to-teal-300 rounded-full blur-lg opacity-70 -top-10 -left-10 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                      <div className="absolute w-32 h-32 bg-gradient-to-bl from-green-400 to-emerald-200 rounded-full blur-lg opacity-70 -bottom-5 -right-5 animate-pulse" style={{ animationDelay: '1s' }}></div>
+                    </div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-4xl font-bold text-white">LearnHub</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

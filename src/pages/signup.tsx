@@ -23,8 +23,8 @@ const Signup = () => {
       const response = await axios.post('/signup', { email, password });
       console.log(response.data.message);
 
-      // Redirect to the login page upon successful signup
-      router.push('/login'); // Change this to the appropriate route
+      // Redirect to the homepage/dashboard upon successful signup
+      router.push('/'); // Changed from /login to /
     } catch (error: ApiError | any) { // Specify the error type here
       if (error.response && error.response.data) {
         console.error(error.response.data.message);
@@ -57,7 +57,7 @@ const Signup = () => {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm"
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-500 rounded-t-md focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm"
                 placeholder="Email address"
               />
             </div>
@@ -73,7 +73,7 @@ const Signup = () => {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm"
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-500 rounded-b-md focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm"
                 placeholder="Password"
               />
             </div>
@@ -85,6 +85,16 @@ const Signup = () => {
               className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
             >
               Sign Up
+            </button>
+          </div>
+          
+          <div className="mt-4 text-center">
+            <button
+              type="button"
+              onClick={() => router.push('/')}
+              className="text-sm text-green-600 hover:text-green-700"
+            >
+              Return to Dashboard
             </button>
           </div>
         </form>

@@ -44,13 +44,13 @@ const Navbar = () => {
                 </div>
                 <Link href="#">
                   <span className="sr-only">CourseVista</span>
-                  <Image
+                  {/* <Image
                     className="w-auto h-8 sm:h-10"
                     src="https://tailwindui.com/img/logos/mark.svg?from-color=teal&from-shade=200&to-color=green&to-shade=400&toShade=400"
                     alt=""
                     height={300}
                     width={400}
-                  />
+                  /> */}
                 </Link>
               </div>
               <div className="flex items-center -mr-2 md:hidden">

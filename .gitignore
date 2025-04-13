@@ -4,9 +4,18 @@
 /node_modules
 /.pnp
 .pnp.js
+package-lock.json
+yarn.lock
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 
 # testing
 /coverage
+.nyc_output
 
 # next.js
 /.next/
@@ -14,23 +23,31 @@
 
 # production
 /build
+/dist
 
 /.github
 
 /.vscode
+.idea/
+*.sublime-project
+*.sublime-workspace
 
 # misc
 .DS_Store
 *.pem
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+.env
 
 # debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
-
-# local env files
-.env*.local
+logs
+*.log
 
 # vercel
 .vercel
@@ -38,3 +55,20 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# PWA files
+**/public/sw.js
+**/public/workbox-*.js
+**/public/worker-*.js
+**/public/fallback-*.js
+**/public/precache.*.js
+
+# Sentry
+.sentryclirc
+
+# storybook
+storybook-static
+
+# Cache
+.eslintcache
+.cache
