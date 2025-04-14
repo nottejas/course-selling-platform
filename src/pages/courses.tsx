@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface Course {
   id: number;
@@ -26,7 +27,7 @@ const Courses = () => {
       description: 'Comprehensive Python Developer Course',
       imageUrl: 'https://img-c.udemycdn.com/course/750x422/2314160_8d61_6.jpg',
       duration: '8 weeks',
-      price: '$99',
+      price: '₹3499',
       summary:
         'This comprehensive and project-based course will introduce you to all of the modern skills of a Python developer (Python 3) and along the way, we will build over 12 real-world projects to add to your portfolio (You will get access to all the code from the 12+ projects we build so that you can put them on your portfolio right away)!',
       imageWidth: 750, // Add the width here
@@ -40,7 +41,7 @@ const Courses = () => {
       imageUrl:
         'https://img-c.udemycdn.com/course/750x422/1565838_e54e_16.jpg',
       duration: '6 weeks',
-      price: '$79',
+      price: '₹2999',
       summary: 'Learn important skills in this course.',
       imageWidth: 750, // Add the width here
       imageHeight: 422, // Add the height here
@@ -51,7 +52,7 @@ const Courses = () => {
       description: 'Learn to create Machine Learning Algorithms in Python and R from scratch',
       imageUrl: 'https://img-c.udemycdn.com/course/750x422/950390_270f_3.jpg',
       duration: '10 weeks',
-      price: '$119',
+      price: '₹4999',
       summary: 'Learn how to create Machine Learning Algorithms in Python and R from two Data Science experts. Code templates included for you to download and use in your own projects.',
       imageWidth: 750,
       imageHeight: 422,
@@ -62,7 +63,7 @@ const Courses = () => {
       description: 'Dive in and learn React.js from scratch! Learn Reactjs, Hooks, Redux, React Routing, Animations, Next.js and more!',
       imageUrl: 'https://img-c.udemycdn.com/course/750x422/1362070_b9a1_2.jpg',
       duration: '7 weeks',
-      price: '$89',
+      price: '₹3799',
       summary: 'This course will teach you React.js in a practice-oriented way, using all the latest patterns and best practices. You will learn all the key fundamentals as well as advanced concepts and related topics to turn you into a React.js developer.',
       imageWidth: 750,
       imageHeight: 422,
@@ -73,7 +74,7 @@ const Courses = () => {
       description: 'Complete Data Science Training: Mathematics, Statistics, Python, Advanced Statistics, Machine & Deep Learning',
       imageUrl: 'https://img-c.udemycdn.com/course/750x422/1754098_e0df_3.jpg',
       duration: '12 weeks',
-      price: '$129',
+      price: '₹4599',
       summary: 'The Data Science Course is the most comprehensive, yet straight-forward, course for the data science and machine learning field. Learn statistical analysis, Python, and the most in-demand skills needed for data scientist roles.',
       imageWidth: 750,
       imageHeight: 422,
@@ -84,7 +85,7 @@ const Courses = () => {
       description: 'Learn modern advanced JavaScript practices and be in the top 10% of JavaScript developers',
       imageUrl: 'https://img-c.udemycdn.com/course/750x422/1501104_967d_13.jpg',
       duration: '5 weeks',
-      price: '$69',
+      price: '₹2499',
       summary: 'Advanced JavaScript concepts such as prototype inheritance, scope, closures, execution context, higher-order functions, and more. Gain a deep understanding of how JavaScript works behind the scenes.',
       imageWidth: 750,
       imageHeight: 422,
@@ -111,9 +112,14 @@ const Courses = () => {
   return (
     <div className="bg-gray-100 min-h-screen py-8">
       <div className="container mx-auto p-8">
-        <h1 className="text-3xl font-semibold mb-4 text-blue-900">
-          Available Courses
-        </h1>
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-3xl font-semibold text-blue-900">
+            Available Courses
+          </h1>
+          <Link href="/" className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+            Back to Homepage
+          </Link>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {courses.map((course) => (
             <div

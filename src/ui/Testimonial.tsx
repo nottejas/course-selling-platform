@@ -36,7 +36,7 @@ const Testimonial = () => {
                   </p>
                 </blockquote>
                 <figcaption className='mt-8 text-base'>
-                  <div className='font-semibold text-white'>Tejas Padmakar</div>
+                  <div className='font-semibold text-white'>Priya Pandey, Mansi Patil</div>
                   <div className='mt-1 text-gray-400'>CEO of CourseVista</div>
                 </figcaption>
               </figure>
